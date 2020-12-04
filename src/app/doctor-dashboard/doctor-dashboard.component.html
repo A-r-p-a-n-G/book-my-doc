@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Home {background-color: red;}
+#News {background-color: green;}
+#Contact {background-color: blue;}
+#About {background-color: orange;}
+</style>
+</head>
+<body >
+  <button class="tablink" >.</button>
+<button class="tablink" (click)="viewappointment(id.id)"> View My Appointments</button>
+<button class="tablink" (click)="navigateManageDoc()">My Profile</button>
+<button class="tablink" onclick="">.</button>
+
+<h4 class="id" style="padding: 40px; color:black;" >MyID: <span style="color: blueviolet;">#{{id.id}}</span></h4>
+
+
+<h2 class="alert" style=" color: red;">{{message}}</h2>
+    
+
+<div *ngIf="details!=null">
+<h2 class="col-md-8 offset-2 mt-4" style="color: blueviolet;">My Appointments</h2>
+<div class="col-md-8 offset-2 mt-4 card card-body" style=" border-color:blueviolet; border-width:2px;">
+    
+    <div class="panel panel-primary">
+        
+        <div class="panel-heading">
+        </div>
+        <div  class="panel-body" >
+         
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Appointment ID</th>
+                <th>My ID</th>
+                <th>My Name</th>
+                
+                <th>Patient's ID</th>
+                <th>Patient's Name</th>
+                <th>Selected Date</th>
+                <th>Appointment Timing</th>
+                <th>Cancel </th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let appointment of appointments">
+                <td>#{{appointment.appointment_id}}</td>
+                <td>#{{appointment.doc_id}}</td>
+                <td>{{appointment.doc_name}}</td>
+                <td>{{appointment.patient_id}}</td>
+                <td>{{appointment.patient_name}}</td>
+                <td>{{appointment.select_date}}</td>
+                <td>{{appointment.select_time}}</td>
+                <td><button style="width: 60px;" class="btn btn-outline-danger btn-rounded btn-block waves-effect "><img src="\assets\icons8-delete-bin-96.png" alt="img" width="25" height="25"
+                    (click)="navigate1(patient.patient_id, patient.patient_name, patient.patient_mail, patient.patient_age, patient.patient_gender)"></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+<br><br><br>
+  
+</body>
+
+
+</html> 
+<router-outlet></router-outlet>

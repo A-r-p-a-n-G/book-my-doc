@@ -1,0 +1,48 @@
+<br><br><div class="card col-md-4 offset-md-4 card card-body">
+
+    <form [formGroup]="regForm">
+        <div class="form-group">
+            <h3 style="color: blueviolet;">Doctor's Registration</h3>
+            <br><br>
+            <label for="doc_name" style="color: black; font-weight: bold;">Doctor Name</label>
+            <input type="text" class="form-control" id="doc_name" name="doc_name" formControlName="doc_name">
+            <!-- <div style="color:red;" *ngIf="regForm.get('pname').value.length<4">Enter atleast 4 characters </div>
+            <div style="color:red;" *ngIf="regForm.get('pname').value<1">product name cannot be empty</div> -->
+        </div>
+
+        <div class="form-group">
+            <label for="doc_mail" style="color: black; font-weight: bold;">Email ID</label>
+            <input type="doc_mail" class="form-control" id="doc_mail" name="doc_mail" formControlName="doc_mail">
+            <!-- <div style="color:red;" *ngIf="regForm.get('price').value<1">Price cannot be empty</div> -->
+        </div>
+
+
+        <div class="form-group">
+            <label for="doc_password" style="color: black; font-weight: bold;">Password </label>
+            <input type="password" class="form-control" id="doc_password" name="doc_password" formControlName="doc_password">
+            <!-- <div style="color:red;" *ngIf="regForm.get('url').value.length<4">Enter image URL </div>
+            <div style="color:red;" *ngIf="regForm.get('url').value<1">Image URL cannot be empty</div> -->
+        </div>
+
+        <div class="form-group">
+            <label for="doc_speciality" style="color: black; font-weight: bold;">Speciality </label>
+            <input type="text" class="form-control" id="doc_speciality" name="doc_speciality" formControlName="doc_speciality">
+            <!-- <div style="color:red;" *ngIf="regForm.get('url').value.length<4">Enter image URL </div>
+            <div style="color:red;" *ngIf="regForm.get('url').value<1">Image URL cannot be empty</div> -->
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="doc_location" style="color: black; font-weight: bold;">Location</label>
+            <!-- <input type="text" class="form-control" id="prod_details" name="prod_details" formControlName="prod_details"> -->
+            <textarea class="form-control" id="doc_location" name="doc_location" formControlName="doc_location" rows="4" cols="50">
+</textarea>
+        </div>
+
+        <button type="submit" class="btn btn-secondary" name="submit" [disabled]="regForm.invalid"
+            (click)="addDataToService(regForm.value)">Register</button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="reset" class="btn btn-primary" name="reset">Reset</button>
+    </form>
+</div>
+<br><br>

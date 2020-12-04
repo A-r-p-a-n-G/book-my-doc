@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 class="col-md-4 mt-4 offset-md-4" style="color: blueviolet;"> Book Your Appointment.</h2>
+    <div class="card col-md-4 mt-4 offset-md-4 card card-body">
+        
+        <form [formGroup]="regForm">
+            
+            <div class="form-group">
+                <label for="doc_id" style="color: black; font-weight: bold;">Doctor ID</label>
+                <input type="number" class="form-control" id="doc_id" name="doc_id" formControlName="doc_id" value="{{id.id}}"  disabled>
+                <!-- <div style="color:red;" *ngIf="regForm.get('pname').value.length<4">Enter atleast 4 characters </div>
+                <div style="color:red;" *ngIf="regForm.get('pname').value<1">product name cannot be empty</div> -->
+            </div>
+            <div class="form-group">
+                <label for="doc_name" style="color: black; font-weight: bold;">Doctor Name</label>
+                <input type="text" class="form-control" id="doc_name" name="doc_name" formControlName="doc_name" value="{{doctors.doc_name}}" disabled>
+                <!-- <div style="color:red;" *ngIf="regForm.get('pname').value.length<4">Enter atleast 4 characters </div>
+                <div style="color:red;" *ngIf="regForm.get('pname').value<1">product name cannot be empty</div> -->
+            </div>
+    
+            <div class="form-group">
+                <label for="doc_speciality" style="color: black; font-weight: bold;">Doctor's Speciality</label>
+                <input type="text" class="form-control" id="doc_speciality" name="doc_speciality" formControlName="doc_speciality" value="{{doctors.doc_speciality}}" disabled>
+                <!-- <div style="color:red;" *ngIf="regForm.get('price').value<1">Price cannot be empty</div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="patient_id" style="color: black; font-weight: bold;">Patient's ID</label>
+                <input type="number" class="form-control" id="patient_id" name="patient_id" formControlName="patient_id">
+                <!-- <div style="color:red;" *ngIf="regForm.get('price').value<1">Price cannot be empty</div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="patient_name" style="color: black; font-weight: bold;">Patient's Name</label><span style="color: red;">*</span>
+                <input type="text" class="form-control" id="patient_name" name="patient_name" formControlName="patient_name">
+                <!-- <div style="color:red;" *ngIf="regForm.get('price').value<1">Price cannot be empty</div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="select_date" style="color: black; font-weight: bold;">Select Date</label><span style="color: red;">*</span>
+                <input type="date" class="form-control" id="select_date" name="select_date" formControlName="select_date">
+                <!-- <div style="color:red;" *ngIf="regForm.get('price').value<1">Price cannot be empty</div> -->
+            </div>
+
+            <div class="form-group">
+                <label for="select_time"  style="color: black; font-weight: bold;">Select Appointment Time</label><span style="color: red;">*</span>
+                <select class="form-control" id="select_time" name="select_time" formControlName="select_time">
+                  <option value="10:30AM">10:30AM</option>
+                  <option value="2:00PM">2:00PM</option>
+                  <option value="4:30PM">4:30PM</option>
+                  <option value="5:00PM">5:00PM</option>
+                  <option value="6:30PM">6:30PM</option>
+                  <option value="7:30PM">7:30PM</option>
+                </select>
+                <!-- <div style="color: red;" *ngIf="regForm.get('patient_gender').touched && regForm.get('patient_gender').pristine">
+                  *invalid</div> -->
+              </div>
+    
+            <button type="submit" class="btn btn-primary" name="submit"
+                (click)="updateDataFromService(id.id, doctors.doc_name, doctors.doc_speciality,regForm.value)">Book Appointment</button> &nbsp;&nbsp;&nbsp;&nbsp;
+           
+        </form>
+    </div> 
+</body>
+</html>

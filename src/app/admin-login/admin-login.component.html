@@ -1,0 +1,72 @@
+<!-- <div class="col-md-4 offset-4 mt-4 card">
+
+  <h5 class="card-header text-center py-4">
+      <strong>Sign in</strong>
+  </h5>
+<br>
+  <div class="card-body px-lg-5 pt-0">
+
+      <form class="md-form" style="color: #757575;">
+
+          <input type="email" id="materialLoginFormEmail" class="form-control">
+          <label for="materialLoginFormEmail">E-mail</label>
+
+
+          <input type="password" id="materialLoginFormPassword" class="form-control">
+          <label for="materialLoginFormPassword">Password</label>
+
+
+          <div class="d-flex align-items-center justify-content-between">
+              <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="materialLoginFormRemember">
+                  <label class="form-check-label" for="materialLoginFormRemember">Remember me</label>
+              </div>
+              <div>
+                  <a href="">Forgot password?</a>
+              </div>
+          </div>
+
+
+          <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Sign in</button>
+
+          <div class="text-center">
+              <p>Not a member?
+                  <a href="">Register</a>
+              </p>
+
+          </div>
+      </form>
+  </div>
+</div> -->
+
+
+<div class="bg-image"> </div>
+
+<div class="bg-text">
+  <div class="col-md-4 offset-4 mt-4 card card-body">
+    <form [formGroup]="regForm">
+        <h3 style="color: blueviolet;">Admin's Login</h3><br>
+      <div class="form-group">
+        <label for="admin_mail">Email Address</label>
+        <input type="admin_mail" class="form-control" id="admin_mail" name="admin_mail" formControlName="admin_mail" required
+          >
+      </div>
+      <div class="form-group">
+        <label for="admin_password">Password</label>
+        <input type="password" class="form-control" id="admin_password" name="admin_password" formControlName="admin_password" required
+          >
+      </div>
+      <button type="submit" class="btn btn-secondary" [disabled]="regForm.invalid"
+        (click)="navigateAdminDashboard()">Login</button>
+        &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
+        
+    </form>
+  </div>
+</div>
+
+<footer>
+  <p style="color: white;"> &copy; Copyright, All Rights Reserved</p>
+ </footer>
+ 
+  <router-outlet></router-outlet>
+  <br><br>

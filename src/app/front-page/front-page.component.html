@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#" style="font-size: xx-large; font-weight: bold; color: blueviolet;"> Book My Doctor
+          <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ">
+      <li class="nav-item">
+        <a data-toggle="modal" data-target="#exampleModal" class="nav-link" *ngIf="!isLoggedIn()" href="#" style="font-size:larger; "> About Us
+        </a>
+      </li>&nbsp;&nbsp;&nbsp;&nbsp;
+    </ul>&nbsp;&nbsp;
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" *ngIf="!isLoggedIn()" style="font-size: larger;" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            <img src="\assets\icons8-user-96 (2).png" alt="img" width="30" height="30">
+          </a>
+          <a class="nav-link dropdown-toggle" *ngIf="isLoggedIn()" style="font-size: larger;" href="#" id="navbarDropdown" role="button"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+            Logout
+         </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" routerLink="admin-login" *ngIf="!isLoggedIn()"><img src="\assets\icons8-user-100.png" alt="img" width="20" height="20">&nbsp;Admin</a>
+            <a class="dropdown-item" href="#" routerLink="doc-login" *ngIf="!isLoggedIn()"><img src="\assets\icons8-medical-doctor-100.png" alt="img" width="20" height="20">&nbsp;Doctor</a>
+            <a class="dropdown-item" href="#" routerLink="patient-login" *ngIf="!isLoggedIn()"><img src="\assets\icons8-hospital-bed-100.png" alt="img" width="20" height="20">&nbsp;Patient</a>
+            <a class="dropdown-item" *ngIf="isLoggedIn()" (click)="logOutFunction()"href="#">Logout</a>
+          </div>
+
+        </li>&nbsp;&nbsp;
+      </ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <!-- <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="admin-login">Admin Login</a>
+              </li>&nbsp;&nbsp;
+              <li class="nav-item">
+                  <a class="nav-link" routerLink="doc-login">Doctor Login</a>
+              </li>&nbsp;&nbsp;
+              <li class="nav-item">
+                <a class="nav-link" routerLink="">Patient Login</a>
+              </li>&nbsp;&nbsp;
+          </ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+    </form>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">About Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, expedita amet? Officia provident aut temporibus perspiciatis odio? Laborum, recusandae dolore. Ipsum ab error maiores repellat voluptatem laborum, eligendi nesciunt rerum!
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat quae, neque possimus, esse sit ipsum ab quaerat perferendis cupiditate quasi culpa velit, molestiae labore vel deserunt voluptatum repellendus itaque rem?
+
+<br><br><br>
+
+        <div class="card text-center">
+  <div class="card-header">
+    CONTACT NUMBERS
+  </div>
+  <div class="card-body">
+
+    <p class="card-text"> Ambulance:	+45664546464
+      <br>
+      <br>
+    Boardline:	456484456454
+    <br>
+    <br>
+    - Emergency/ Casualty:	1415/ 16151
+    <br>
+    <br>
+    - Admission Department:	1515/ 116/ 6155
+    <br>
+    <br>
+    - Appointment : OPD	1566/ 5156
+    <br>
+    <br>
+    </p>
+
+  </div>
+  <div class="card-footer text-muted">
+    For grievances:	complaints@bookMyDoctor.com
+<br>
+For any other queries	: info@bookMyDoctor.com
+  </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

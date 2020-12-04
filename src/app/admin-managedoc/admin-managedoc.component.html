@@ -1,0 +1,43 @@
+<h2  class="col-md-8 offset-2 mt-4" style="color: blueviolet;">Doctors List</h2>
+<div class="col-md-8 offset-2 mt-4 card card-body" style=" border-color:blueviolet; border-width:2px;">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+     
+    </div>
+    <div class="panel-body" >
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Doctor ID</th>
+            <th>Doctor Name</th>
+            <th>Doctor Email</th>
+            <th>Doctor Speciality</th>
+            <th>Doctor Location</th>
+            <th>Delete Record</th>
+            <th>Update Record</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let doctor of doctors">
+            <td>#{{doctor.doc_id}}</td>
+            <td>{{doctor.doc_name}}</td>
+            <td>{{doctor.doc_mail}}</td>
+            <td>{{doctor.doc_speciality}}</td>
+            <td>{{doctor.doc_location}}</td>
+            <td><button class="btn btn-outline-danger btn-rounded btn-block waves-effect "><img src="\assets\icons8-delete-bin-96.png" alt="img" width="25" height="25"
+              (click)="navigate1(doctor.doc_id, doctor.doc_name, doctor.doc_mail, doctor.doc_speciality, doctor.doc_location)"></button>
+              <td><button class="btn btn-outline-primary btn-rounded btn-block  waves-effect "><img src="\assets\icons8-update-96.png" alt="img" width="25" height="25"
+                (click)="navigate(doctor.doc_id, doctor.doc_name, doctor.doc_mail, doctor.doc_speciality, doctor.doc_location)"></button>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br><br><br>
+
+<!-- (click)="navigate1(doctor.doc_id, doctor.doc_name, doctor.doc_mail, doctor.doc_speciality, doctor.doc_location)"
+
+<button  class="btn btn-danger"  style="margin-left: 10px" >Delete</button> -->

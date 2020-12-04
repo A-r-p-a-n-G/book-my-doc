@@ -1,0 +1,17 @@
+card{
+    padding: 10px;
+}
+
+
+footer {
+
+    position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+    height: 50px;
+    background-color:rgb(63, 62, 62);
+    margin-bottom: -100px;
+    text-align: center;
+    
+  }

@@ -1,0 +1,43 @@
+<h2  class="col-md-10 offset-1 mt-4" style="color: blueviolet;">Appointment List</h2>
+<div class="col-md-10 offset-1 mt-4 card card-body" style=" border-color:blueviolet; border-width:2px;">
+<div class="panel panel-primary">
+    <div class="panel-heading">
+     
+    </div>
+    <div class="panel-body" >
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Appointment ID</th>
+            <th>Doctor ID</th>
+            <th>Doctor Name</th>
+            <th>Doctor Speciality</th>
+            <th>Patient ID</th>
+            <th>Patient Name</th>
+            <th>Appointment Date</th>
+            <th>Timing</th>
+            <th>Cancel Appointment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let appointment of appointments">
+            <td>{{appointment.appointment_id}}</td>
+            <td>{{appointment.doc_id}}</td>
+            <td>{{appointment.doc_name}}</td>
+            <td>{{appointment.doc_speciality}}</td>
+            <td>{{appointment.patient_id}}</td>
+            <td>{{appointment.patient_name}}</td>
+            <td>{{appointment.select_date}}</td>
+            <td>{{appointment.select_time}}</td>
+            <td><button class="btn btn-outline-danger btn-rounded btn-block waves-effect " style="width: 80px;"><img src="\assets\icons8-cancel-144.png" alt="img" width="40" height="40"
+              (click)="navigate1(appointment.appointment_id,appointment.doc_id, appointment.doc_name, appointment.doc_speciality, appointment.patient_id, appointment.patient_name, appointment.select_date, appointment.select_time )"></button>
+              <!-- <td><button class="btn btn-outline-primary btn-rounded btn-block  waves-effect "><img src="\assets\icons8-update-96.png" alt="img" width="25" height="25"></button> -->
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<br><br><br>

@@ -1,0 +1,36 @@
+<h2 class="col-md-8 offset-md-2 mt-4" style="color: blueviolet;"> Search Here.</h2>
+<div class="card col-md-8 offset-md-2 mt-4 card card-body" style=" border-color:blueviolet; border-width:2px;">
+    <form >
+        <div class="form-group"> 
+    <input type="text" class="form-control" name="search" placeholder="Search by Location OR by Doctors Speciality." style="font-size: large;" [(ngModel)]="search">
+        </div>
+    </form>
+    
+    <div class="mt-4">
+    <table class="table table-striped">
+      <tr>
+        <th>Doctor Id</th>&nbsp;&nbsp;
+        <th>Doctor Name</th>&nbsp;&nbsp;
+        <th>Doctor Email</th>&nbsp;&nbsp;
+        <th>Doctor Speciality</th>&nbsp;&nbsp;
+        <th>Doctor Location</th>&nbsp;&nbsp;
+        <th>Book Appointment</th>&nbsp;&nbsp;
+      </tr>
+      <tr *ngFor="let doctor of doctors | docsearch:search">
+     <td>#{{doctor.doc_id}}</td>&nbsp;<br>
+     <td>{{doctor.doc_name}}</td>&nbsp;<br>
+     <td>{{doctor.doc_mail}}</td>&nbsp;<br>
+     <td>{{doctor.doc_speciality}}</td>&nbsp;<br>
+    <td>{{doctor.doc_location}}</td>&nbsp;
+    <td> <button class="btn btn-outline-info btn-rounded btn-block waves-effect " style="width: 60px;" 
+      (click)="navigate(doctor.doc_id, doctor.doc_name, doctor.doc_speciality)"><img src="\assets\icons8-stethoscope-100.png" alt="img" width="30" height="30"
+      ></button>
+      </tr>
+    </table>
+    </div>
+
+    <!-- <button  class="btn btn-primary" (click)="navigate(doctor.doc_id, doctor.doc_name, doctor.doc_speciality)" style="margin-left: 5px" >Book Appointment</button> -->
+
+    <!-- <button class="btn btn-outline-danger btn-rounded btn-block waves-effect "><img src="\assets\icons8-delete-bin-96.png" alt="img" width="25" height="25"
+      (click)="navigate1(patient.patient_id, patient.patient_name, patient.patient_mail, patient.patient_age, patient.patient_gender)"></button>
+      <td><button class="btn btn-outline-primary btn-rounded btn-block  waves-effect "><img src="\assets\icons8-update-96.png" alt="img" width="25" height="25"></button> -->

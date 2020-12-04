@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box
+    }
+
+    /* Set height of body and the document to 100% */
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial;
+    }
+
+    /* Style tab links */
+    .tablink {
+      background-color: #555;
+      color: white;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      font-size: 17px;
+      width: 25%;
+    }
+
+    .tablink:hover {
+      background-color: #777;
+    }
+
+    /* Style the tab content (and add height:100% for full page content) */
+    .tabcontent {
+      color: white;
+      display: none;
+      padding: 100px 20px;
+      height: 100%;
+    }
+
+    #Home {
+      background-color: red;
+    }
+
+    #News {
+      background-color: green;
+    }
+
+    #Contact {
+      background-color: blue;
+    }
+
+    #About {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="tablink" onclick="">-</button>
+  <button class="tablink" (click)="navigateManageAppointment()">Manage Appointments</button>
+  <button class="tablink" (click)="navigateManageDoc()">Manage Doctors</button>
+  <button class="tablink" (click)="navigateManagePatient()">Manage Patients</button>
+  
+  <br><br><br>
+  <div class="col-md-10 mt-4 offset-1">
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="\assets\Dollarphotoclub_67885387.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: blueviolet; font-weight: 500;">Managing Appointments</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="\assets\doctor-holding-phone-with-a-hologram.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: brown; font-weight: 500; ">Managing Doctors</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"><small class="text-muted">Last updated 2 days ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="\assets\digital-health-managing-patients-and-disease-1-638.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title" style="color: darkgreen; font-weight: 500;">Managing Patients</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <p class="card-text"><small class="text-muted">Last updated 5 days ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+
+
+
+</body>
+
+<footer>
+  <p style="color: white;"> &copy; Copyright, All Rights Reserved</p>
+ </footer>
+ 
+</html>
+<router-outlet></router-outlet>
